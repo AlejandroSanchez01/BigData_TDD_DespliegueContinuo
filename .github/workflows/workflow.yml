@@ -44,6 +44,9 @@ jobs:
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           aws-region: us-east-1
       - name: test aws cli
-        run: aws s3api list-buckets
+        run:  |
+          aws s3api list-buckets
+          aws s3 cp numeroMenor.py s3://bigdata20230/numeroMenor.py
+        
           
           
